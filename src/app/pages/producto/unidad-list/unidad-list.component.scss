@@ -1,0 +1,16 @@
+.fila{
+  cursor: pointer;
+  
+  &:hover   {
+    background: var(--ColorHover) 
+  }
+
+}
+
+.focusSelect{
+  background: var(--ColorFocus);
+}
+.defaulRow {
+  background: var(--ColorFocus);
+}
+//background: #fbec88 ;
