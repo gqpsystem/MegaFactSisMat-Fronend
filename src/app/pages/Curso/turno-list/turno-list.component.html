@@ -1,0 +1,37 @@
+<mat-form-field appearance="outline">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Buscar">
+</mat-form-field>
+<div class="mat-elevation-z8">
+  <mat-table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="idTurno">
+      <mat-header-cell *matHeaderCellDef>idTurno</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.idTurno}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="turno">
+      <mat-header-cell *matHeaderCellDef>turno</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.turno}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="descripcion">
+      <mat-header-cell *matHeaderCellDef>descripcion</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.descripcion}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="acciones">
+      <mat-header-cell *matHeaderCellDef >Acciones</mat-header-cell>
+      <mat-cell *matCellDef="let row" >
+        <button mat-icon-button matTooltip="Editar" color="primary" (click)="openDialog(row)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="row.position == SelectFocus ? 'focusSelect fila': 'fila'"   (click)="selectRow(row)" ></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>
+<button mat-fab color="accent" style="float:right" (click)="openDialog()">
+  <mat-icon>create</mat-icon>
+</button>

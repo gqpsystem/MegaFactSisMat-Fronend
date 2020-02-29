@@ -14,6 +14,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CursoListComponent } from './pages/Curso/curso-list/curso-list.component';
 import { CursoEditComponent } from './pages/Curso/curso-edit/curso-edit.component';
+import { TurnoListComponent } from './pages/curso/turno-list/turno-list.component';
+import { TurnoEditComponent } from './pages/curso/turno-edit/turno-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,13 @@ import { CursoEditComponent } from './pages/Curso/curso-edit/curso-edit.componen
     UnidadListComponent,
     UnidadEditComponent,
     CursoListComponent,
-    CursoEditComponent
+    CursoEditComponent,
+    TurnoListComponent,
+    TurnoEditComponent
   ],
   entryComponents: [
-    UnidadEditComponent
+    UnidadEditComponent,
+    TurnoEditComponent
     ],
   imports: [
     BrowserModule,
